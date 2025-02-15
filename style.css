@@ -1,0 +1,229 @@
+/*CSS RESET START*/
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/*CSS RESET END*/
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: black;
+  text-align: center;
+  transition: background 0.3s, color 0.3s;
+}
+
+.container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Task Input */
+.todo-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Task List */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 10px;
+  margin: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: white;
+  cursor: pointer;
+}
+
+li.completed {
+  text-decoration: line-through;
+  color: grey;
+}
+
+li button {
+  background: red;
+  color: white;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+li button:hover {
+  background: darkred;
+}
+
+/* Filters */
+.filters {
+  margin-bottom: 10px;
+}
+
+.filters button {
+  margin: 5px;
+  padding: 8px;
+}
+
+.delete-task {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+.dark-mode .container {
+  background-color: #333;
+}
+
+.dark-mode button {
+  background-color: #444;
+}
+
+.dark-mode input {
+  background-color: #222;
+  color: white;
+  border: 1px solid white;
+}
+
+.back-button {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+}
+
+.dark-mode .back-button {
+  background-color: #444;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .container {
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  .todo-input {
+    flex-direction: column;
+  }
+
+  input {
+    width: 100%;
+  }
+}
