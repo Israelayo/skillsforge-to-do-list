@@ -43,26 +43,37 @@ document.addEventListener("DOMContentLoaded", function () {
     li.dataset.userId = task.userId;
     li.className = task.completed ? "completed" : "";
 
-    li.innerHTML = `
-            <a href="task.html?title=${encodeURIComponent(
-              task.title
-            )}&completed=${task.completed}&userId=${task.userId}">
-                ${task.title} (User ${task.userId})
-            </a>
-            <button class="delete-task">X</button>
-        `;
+    // Create checkbox
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.checked = task.completed;
+    checkbox.addEventListener("change", function () {
+        task.completed = checkbox.checked; // Update the task's completed status
+        li.classList.toggle("completed", task.completed);
+        saveTasks(); // Save updated tasks to localStorage
+    });
 
-    li.querySelector(".delete-task").addEventListener(
-      "click",
-      function (event) {
+    // Create task link
+    const taskLink = document.createElement("a");
+    taskLink.href = `task.html?title=${encodeURIComponent(task.title)}&completed=${task.completed}&userId=${task.userId}`;
+    taskLink.textContent = `${task.title} (User ${task.userId})`;
+
+    // Create delete button
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "X";
+    deleteButton.classList.add("delete-task");
+    deleteButton.addEventListener("click", function (event) {
         event.stopPropagation();
         li.remove();
-        saveTasks();
-      }
-    );
+        saveTasks(); // Save updated tasks after deletion
+    });
 
+    // Append elements to the task list item
+    li.appendChild(checkbox);
+    li.appendChild(taskLink);
+    li.appendChild(deleteButton);
     taskList.appendChild(li);
-  }
+}
 
   // Add new task
   addTaskButton.addEventListener("click", function () {

@@ -6,7 +6,7 @@ This is a simple To-Do List web application that allows users to add tasks, mark
 
 ## Features
 ✅ Add new tasks  
-✅ Mark tasks as completed (strikethrough effect)  
+✅ Mark tasks as completed (✅ checkbox and strikethrough effect)  
 ✅ Delete tasks  
 ✅ Filter tasks (All, Completed, Incomplete)  
 ✅ Dark mode toggle (works across all pages)  
@@ -17,7 +17,7 @@ This is a simple To-Do List web application that allows users to add tasks, mark
 ---
 
 ## Live Demo
-[Click here to view the live demo](#) 
+[Click here to view the live demo](https://skillsforge-to-do-list.netlify.app/) 
 
 ---
 
@@ -61,7 +61,7 @@ Since this is a frontend-only project, simply open index.html in your browser:
 	1.	Adding a Task:
 	•	Enter a task in the input field and click “Add Task”.
 	2.	Marking a Task as Completed:
-	•	Click on a task to toggle completion (strikethrough effect).
+	•	Click on a task's checkbox ✅ to toggle completion (strikethrough effect).
 	3.	Deleting a Task:
 	•	Click the "X" button next to a task to remove it.
 	4.	Filtering Tasks:

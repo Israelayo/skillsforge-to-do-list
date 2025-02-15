@@ -102,6 +102,10 @@ input {
   border-radius: 5px;
 }
 
+input[type= "checkbox"]{
+    cursor: pointer;
+}
+
 button {
   padding: 10px;
   border: none;
@@ -126,12 +130,29 @@ li {
   padding: 10px;
   margin: 5px 0;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   border: 1px solid #ddd;
   border-radius: 5px;
   background: white;
   cursor: pointer;
+  gap: 10px; 
+}
+
+li a {
+  flex: 1; 
+  text-decoration: none;
+  color: inherit;
+}
+
+li input[type="checkbox"] {
+  margin-right: 10px; 
+  width: 18px;
+  height: 18px;
+}
+
+li button {
+  flex-shrink: 0;
 }
 
 li.completed {
@@ -190,6 +211,16 @@ body.dark-mode {
   background-color: #222;
   color: white;
   border: 1px solid white;
+}
+
+.dark-mode li{
+    background-color: #444;
+    color: white;
+}
+
+.dark-mode li.completed{
+    color: lightgray;
+    text-decoration: line-through;
 }
 
 .back-button {
